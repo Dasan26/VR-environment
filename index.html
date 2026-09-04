@@ -38,18 +38,18 @@
     <!-- Ajusta scale="0.001 0.001 0.001" si la pieza exportada desde CAD viene en milímetros -->
     <a-entity 
       gltf-model="#modelo-cad" 
-      position="0 1.1 -2.5" 
+      position="0 0 0" 
       rotation="0 45 0" 
       scale="1 1 1"
       rotar-cad="speed: 3">
     </a-entity>
 
     <!-- ENTORNO Y PISO DE PRUEBA -->
-    <a-plane position="0 0 -2.5" rotation="-90 0 0" width="10" height="10" color="#1E293B"></a-plane>
+    <a-plane position="-0.2 1 -0.5" rotation="-90 0 0" width="1" height="1" color="#1E293B"></a-plane>
     <a-sky color="#0F172A"></a-sky>
 
     <!-- CÁMARA LIBRE -->
-    <a-entity position="0 1.6 0">
+    <a-entity position="0 0 1.8">
       <a-camera look-controls wasd-controls></a-camera>
     </a-entity>
 
