@@ -16,12 +16,6 @@
 </head>
 <body>
 
-  <!-- Menú de navegación flotante entre escenarios -->
-  <nav class="nav-menu">
-    <a href="index.html" class="nav-btn active">Visor CAD</a>
-    <a href="1/primitivas.html" class="nav-btn">Taller Primitivas</a>
-  </nav>
-
   <a-scene webxr="optionalFeatures: hit-test;">
     
     <!-- GESTOR DE RECURSOS: Carga del archivo .glb -->
@@ -35,7 +29,6 @@
     <a-light type="point" position="0 3 -2" intensity="0.4" color="#E2E8F0"></a-light>
 
     <!-- ENTIDAD DEL MODELO GLB -->
-    <!-- Ajusta scale="0.001 0.001 0.001" si la pieza exportada desde CAD viene en milímetros -->
     <a-entity 
       gltf-model="#modelo-cad" 
       position="0 0 0" 
