@@ -2,13 +2,151 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Colección de Archivos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colección de Ejercicios</title>
+  
+  <!-- Fuente Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      width: 100%;
+      max-width: 480px;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .list-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .list-item a:hover {
+      background-color: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Icono de flecha responsivo */
+    .list-item a::after {
+      content: "→";
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .list-item a:hover::after {
+      transform: translateX(4px);
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Selecciona un archivo:</h1>
-  <ul>
-    <li><a href="1/primitivas.html">Ejercicio 1</a></li>
-    <li><a href="2/vscad.html">Ejercicio 2</a></li>
-  </ul>
+
+  <main class="container">
+    <header class="header">
+      <h1>Colección de Archivos</h1>
+      <p>Selecciona un ejercicio para visualizar su contenido</p>
+    </header>
+
+    <ul class="list">
+      <li class="list-item">
+        <a href="1/primitivas.html">Ejercicio 1: Primitivas</a>
+      </li>
+      <li class="list-item">
+        <a href="2/vscad.html">Ejercicio 2: VSCAD</a>
+      </li>
+    </ul>
+
+    <footer class="footer">
+      Proyectos & Ejercicios Web
+    </footer>
+  </main>
+
 </body>
 </html>

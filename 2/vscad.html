@@ -18,31 +18,31 @@
 
   <a-scene webxr="optionalFeatures: hit-test;">
     
-    <!-- GESTOR DE RECURSOS: Carga del archivo .glb -->
+    <!-- GESTOR DE RECURSOS -->
     <a-assets>
-      <a-asset-item id="vscad" src="models/ensamble.glb"></a-asset-item>
+      <a-asset-item id="vscad" src="../models/ensamble.glb"></a-asset-item>
     </a-assets>
 
     <!-- ILUMINACIÓN -->
-    <a-light type="ambient" color="#FFFFFF" intensity="0.65"></a-light>
-    <a-light type="directional" position="-2 4 2" intensity="0.8" cast-shadow="true"></a-light>
+    <a-light type="ambient" color="#FFFFFF" intensity="0.8"></a-light>
+    <a-light type="directional" position="-2 4 2" intensity="1" cast-shadow="true"></a-light>
     <a-light type="point" position="0 3 -2" intensity="0.4" color="#E2E8F0"></a-light>
 
-    <!-- ENTIDAD DEL MODELO GLB -->
+    <!-- ENTIDAD DEL MODELO GLB (ID Corregido y posición desplazada hacia al fondo) -->
     <a-entity 
-      gltf-model="#modelo-cad" 
-      position="0 0 0" 
+      gltf-model="#vscad" 
+      position="0 0 -2" 
       rotation="0 45 0" 
       scale="1 1 1"
       rotar-cad="speed: 3">
     </a-entity>
 
-    <!-- ENTORNO Y PISO DE PRUEBA -->
-    <a-plane position="-0.2 1 -0.5" rotation="-90 0 0" width="1" height="1" color="#1E293B"></a-plane>
+    <!-- PISO (Ubicado por debajo del origen) -->
+    <a-plane position="0 -1 -2" rotation="-90 0 0" width="10" height="10" color="#1E293B"></a-plane>
     <a-sky color="#0F172A"></a-sky>
 
     <!-- CÁMARA LIBRE -->
-    <a-entity position="0 0 1.8">
+    <a-entity position="0 1.6 1">
       <a-camera look-controls wasd-controls></a-camera>
     </a-entity>
 
