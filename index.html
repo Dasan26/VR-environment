@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colección de Ejercicios</title>
+  <title>Colección de Archivos</title>
   
   <!-- Fuente Google Fonts (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +12,21 @@
 
   <style>
     :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
+      /* Colores Institucionales UMNG */
+      --umng-blue: #0f2b48;        /* Azul Principal */
+      --umng-red: #cc1e1e;         /* Rojo Gules */
+      --umng-yellow: #f1b812;      /* Amarillo / Oro */
+      
+      /* Base de Interfaz */
+      --card-bg: rgba(255, 255, 255, 0.92); /* Blanco ligeramente translúcido */
       --text-main: #0f172a;
       --text-muted: #64748b;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
       --border-color: #e2e8f0;
+      
+      /* Sombras y Bordes */
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 25px -3px rgb(0 0 0 / 0.3);
       --radius: 16px;
     }
 
@@ -33,28 +38,38 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg-color);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 1.5rem;
+      
+      /* CONFIGURACIÓN DE IMAGEN DE FONDO */
+      background-image: 
+                        url('https://image.slidesdocs.com/responsive-images/background/future-science-technology-virtual-reality-powerpoint-background_a245229790__960_540.jpg'); /* Cambia esta URL por la tuya */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     .container {
       background-color: var(--card-bg);
+      backdrop-filter: blur(8px); /* Efecto cristal para el fondo */
       width: 100%;
-      max-width: 480px;
+      max-width: 580px;
       padding: 2.5rem;
       border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
       border: 1px solid var(--border-color);
-      transition: box-shadow 0.3s ease;
+      /* Borde superior en Azul Institucional */
+      border-top: 6px solid var(--umng-blue);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .container:hover {
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
     }
 
     .header {
@@ -66,7 +81,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.025em;
-      color: var(--text-main);
+      color: var(--umng-blue);
       margin-bottom: 0.5rem;
     }
 
@@ -87,32 +102,37 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 1.25rem;
-      background-color: var(--bg-color);
-      color: var(--text-main);
+      background-color: #ffffff;
+      color: var(--umng-blue);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
       border-radius: 10px;
       border: 1px solid var(--border-color);
+      /* Detalle del borde lateral en Amarillo */
+      border-left: 5px solid var(--umng-yellow);
       transition: all 0.2s ease-in-out;
     }
 
     .list-item a:hover {
-      background-color: var(--primary);
+      background-color: var(--umng-red);
       color: #ffffff;
-      border-color: var(--primary);
+      border-color: var(--umng-red);
+      border-left-color: var(--umng-yellow);
       transform: translateY(-2px);
       box-shadow: var(--shadow-sm);
     }
 
-    /* Icono de flecha responsivo */
+    /* Flecha responsiva */
     .list-item a::after {
       content: "→";
       font-size: 1.1rem;
-      transition: transform 0.2s ease;
+      color: var(--umng-yellow);
+      transition: transform 0.2s ease, color 0.2s ease;
     }
 
     .list-item a:hover::after {
+      color: #ffffff;
       transform: translateX(4px);
     }
 
